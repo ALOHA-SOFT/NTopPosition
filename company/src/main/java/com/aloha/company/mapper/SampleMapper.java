@@ -1,0 +1,12 @@
+package com.aloha.company.mapper;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.aloha.company.domain.Sample;
+
+@Mapper
+public interface SampleMapper extends BaseMapper<Sample> {
+  
+  
+}

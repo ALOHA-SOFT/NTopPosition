@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{UI/layouts/user/main_layout}"
+      >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔탑포지션</title>
+</head>
+
+<body layout:fragment="content">
+  <div class="content-wrap" id="print_area" >
+        <!-- Video Background Section -->
+        <section id="video-background-section">
+            <div class="video-slider-container">
+                <div class="swiper videoSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/service_tv_video1.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">임팩트</h2>
+                                        <p class="slide-description animate-fade-up delay-1">정확한 타겟팅, 강력한 도달. TV 광고의 표준을 다시 만듭니다.</p>
+                                        <p class="slide-description animate-fade-up delay-2">브랜드의 순간을 스크린 위에 새깁니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/service_tv_video2.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">고객 중심</h2>
+                                        <p class="slide-description animate-fade-up delay-1">당신의 브랜드가 닿아야 할 그 시간, 그 채널.</p>
+                                        <p class="slide-description animate-fade-up delay-2">우리는 데이터와 경험으로 가장 효과적인 TV 광고를 설계합니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/service_tv_video3.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">스토리</h2>
+                                        <p class="slide-description animate-fade-up delay-1">인TV 속 단 15초가 브랜드의 내일을 바꿉니다.</p>
+                                        <p class="slide-description animate-fade-up delay-2">당신의 이야기를 전국으로 전하는 힘, 우리가 만듭니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const videoSwiper = new Swiper('.videoSwiper', {
+                        loop: true,
+                        speed: 1000,
+                        autoplay: {
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        },
+                        effect: 'fade',
+                        fadeEffect: {
+                            crossFade: true
+                        },
+                        grabCursor: true,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        on: {
+                            slideChange: function() {
+                                // 모든 비디오 일시정지
+                                document.querySelectorAll('.videoSwiper video').forEach(video => {
+                                    video.pause();
+                                });
+
+                                // 현재 슬라이드의 비디오 재생
+                                const activeSlide = this.slides[this.activeIndex];
+                                const activeVideo = activeSlide.querySelector('video');
+                                if (activeVideo) {
+                                    activeVideo.play();
+                                }
+                            },
+                            init: function() {
+                                // 첫 번째 슬라이드 비디오 재생
+                                const activeSlide = this.slides[this.activeIndex];
+                                const activeVideo = activeSlide.querySelector('video');
+                                if (activeVideo) {
+                                    activeVideo.play();
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
+        </section>
+
+
+        <!-- Start Service Details Section -->
+        <section class="cs_pt_140 cs_pt_lg_80 cs_pb_115 cs_pb_lg_55">
+          <div class="container">
+            <div class="cs_section_heading cs_style_1 text-center cs_mb_60 cs_mb_lg_40">
+              <div class="cs_section_heading_in">
+                <h3 class="cs_fs_20 text-accent fw-normal cs_lh_base" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">TV 광고 서비스</h3>
+                <h2 class="cs_fs_48 cs_fs_lg_36 m-0" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">브랜드를 가장 빠르게 대중에게 연결하는 정통 미디어 솔루션<br>정확한 타겟과 높은 도달률로 광고 효과를 극대화</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-3 col-md-6">
+                <div class="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25" data-aos="fade-up" data-aos-delay="100">
+                  <div class="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                    <div class="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- TV 모니터 아이콘 (프로그램 광고) -->
+                        <rect x="4" y="8" width="32" height="22" rx="2" stroke="white" stroke-width="2" fill="none"/>
+                        <rect x="8" y="12" width="24" height="14" fill="white"/>
+                        <path d="M12 34 L20 30 L28 34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="20" cy="19" r="3" fill="#0066ff"/>
+                        <polygon points="19,17 19,21 22,19" fill="white"/>
+                      </svg>
+                    </div>
+                    <h2 class="cs_lh_base cs_fs_20 m-0">프로그램 광고</h2>
+                  </div>
+                  <p class="cs_mb_24">방송 프로그램 전후나 중간에 삽입되는 일반적인 광고. 15초, 30초 단위로 편성됨.</p>
+                  <div class="cs_service_thumb position-relative cs_rounded_5">
+                    <div class="cs_service_thumb-in position-relative-in background-filled h-100" style="background-image: url('../../assets/img/service_tv_1.jpg');"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-6">
+                <div class="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25" data-aos="fade-up" data-aos-delay="200">
+                  <div class="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                    <div class="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- 시계/타이밍 아이콘 (스팟 광고 - 짧은 시간) -->
+                        <circle cx="20" cy="20" r="16" stroke="white" stroke-width="2" fill="none"/>
+                        <path d="M20 20 L20 10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M20 20 L28 20" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="20" cy="20" r="2" fill="white"/>
+                        <path d="M30 8 L34 4 M34 8 L30 4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <text x="20" y="35" font-size="8" fill="white" text-anchor="middle" font-weight="bold">15"</text>
+                      </svg>
+                    </div>
+                    <h2 class="cs_lh_base cs_fs_20 m-0">스팟 광고</h2>
+                  </div>
+                  <p class="cs_mb_24">프로그램과 프로그램 사이 짧은 시간에 방송되는 광고. 시청률이 낮지만 비용이 저렴함.</p>
+                  <div class="cs_service_thumb position-relative cs_rounded_5">
+                    <div class="cs_service_thumb-in position-relative-in background-filled h-100" style="background-image: url('../../assets/img/service_tv_2.jpg');"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-6">
+                <div class="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25" data-aos="fade-up" data-aos-delay="300">
+                  <div class="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                    <div class="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- 텍스트/자막 아이콘 -->
+                        <rect x="4" y="6" width="32" height="28" rx="2" stroke="white" stroke-width="2" fill="none"/>
+                        <line x1="8" y1="12" x2="32" y2="12" stroke="white" stroke-width="1.5"/>
+                        <line x1="8" y1="17" x2="28" y2="17" stroke="white" stroke-width="1.5"/>
+                        <line x1="8" y1="22" x2="30" y2="22" stroke="white" stroke-width="1.5"/>
+                        <rect x="6" y="26" width="28" height="6" rx="1" fill="white" opacity="0.9"/>
+                        <line x1="9" y1="29" x2="25" y2="29" stroke="#0066ff" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <h2 class="cs_lh_base cs_fs_20 m-0">자막 광고</h2>
+                  </div>
+                  <p class="cs_mb_24">화면 하단에 텍스트로 표시되는 광고. 프로그램 시청을 방해하지 않으면서 노출 가능.</p>
+                  <div class="cs_service_thumb position-relative cs_rounded_5">
+                    <div class="cs_service_thumb-in position-relative-in background-filled h-100" style="background-image: url('../../assets/img/service_tv_3.jpg');"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-6">
+                <div class="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25" data-aos="fade-up" data-aos-delay="400">
+                  <div class="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                    <div class="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- 가상현실/CG 아이콘 (가상 광고) -->
+                        <rect x="6" y="10" width="28" height="20" rx="2" stroke="white" stroke-width="2" fill="none"/>
+                        <path d="M6 20 L34 20" stroke="white" stroke-width="1" stroke-dasharray="2,2"/>
+                        <path d="M20 10 L20 30" stroke="white" stroke-width="1" stroke-dasharray="2,2"/>
+                        <rect x="12" y="15" width="6" height="10" fill="white" opacity="0.7"/>
+                        <rect x="22" y="15" width="6" height="10" fill="white" opacity="0.7"/>
+                        <circle cx="15" cy="8" r="2" fill="white"/>
+                        <circle cx="25" cy="8" r="2" fill="white"/>
+                        <path d="M13 8 L15 4 L17 8" stroke="white" stroke-width="1.5" fill="none"/>
+                        <path d="M23 8 L25 4 L27 8" stroke="white" stroke-width="1.5" fill="none"/>
+                      </svg>
+                    </div>
+                    <h2 class="cs_lh_base cs_fs_20 m-0">가상 광고</h2>
+                  </div>
+                  <p class="cs_mb_24">스포츠 중계 등에서 CG 기술로 경기장 바닥이나 벽면에 합성하는 광고. 실제로는 없지만 화면에만 표시됨.</p>
+                  <div class="cs_service_thumb position-relative cs_rounded_5">
+                    <div class="cs_service_thumb-in position-relative-in background-filled h-100" style="background-image: url('../../assets/img/service_tv_4.jpg');"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Service Details Section -->
+
+        <!-- Start Brand Section -->
+        <div class="bg-gray cs_pt_110 cs_pb_110">
+          <div class="container">
+            <div class="cs_brands d-flex justify-content-xl-between align-items-center cs_column_gap_25 cs_row_gap_25 flex-wrap justify-content-center">
+              <div class="cs_brand" data-aos="fade-up" data-aos-delay="100"><img src="../../assets/img/brand_1.svg" alt="Brand"></div>
+              <div class="cs_brand" data-aos="fade-up" data-aos-delay="200"><img src="../../assets/img/brand_2.svg" alt="Brand"></div>
+              <div class="cs_brand" data-aos="fade-up" data-aos-delay="300"><img src="../../assets/img/brand_3.svg" alt="Brand"></div>
+              <div class="cs_brand" data-aos="fade-up" data-aos-delay="400"><img src="../../assets/img/brand_4.svg" alt="Brand"></div>
+              <div class="cs_brand" data-aos="fade-up" data-aos-delay="500"><img src="../../assets/img/brand_5.svg" alt="Brand"></div>
+            </div>
+          </div>
+        </div>
+        <!-- End Brand Section -->
+
+        <!-- Start Testimonial Section -->
+        <section class="background-filled cs_pt_140 cs_pt_lg_75 cs_pb_135 cs_pb_lg_75" style="background-image: url('../../assets/img/testimonial_bg.jpeg'); background-size: cover; background-position: center;">
+          <div class="cs_testimonial_slider cs_gap_30">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 cs_mb_lg_40">
+                  <div class="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_30">
+                    <div class="cs_section_heading_in">
+                      <h3 class="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">고객 후기</h3>
+                      <h2 class="cs_fs_48 cs_fs_lg_36 cs_mb_20" data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">고객님들의<br>생생한 후기</h2>
+                      <p class="m-0">엔탑포지션과 함께한 고객사들의 진솔한 이야기를 들어보세요.</p>
+                    </div>
+                  </div>
+                  <div class="d-flex cs_column_gap_15">
+                    <div class="cs_slider_prev filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
+                      <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.461063 4.4077H19.538C19.7649 4.4077 19.9482 4.22437 19.9482 3.99745C19.9482 3.77052 19.7649 3.58719 19.538 3.58719H1.45209L3.94183 1.09745C4.10209 0.937189 4.10209 0.676933 3.94183 0.516677C3.78158 0.35642 3.52132 0.35642 3.36106 0.516677L0.170038 3.7077C0.0520878 3.82565 0.0174732 4.00129 0.0815754 4.15514C0.145678 4.3077 0.295677 4.4077 0.461063 4.4077Z" fill="black"/>
+                        <path d="M3.65549 7.60253C3.76062 7.60253 3.86575 7.56278 3.94524 7.48202C4.10549 7.32176 4.10549 7.0615 3.94524 6.90125L0.750365 3.70637C0.590108 3.54612 0.329853 3.54612 0.169597 3.70637C0.00934029 3.86663 0.00934029 4.12689 0.169597 4.28714L3.36447 7.48202C3.44524 7.56278 3.55036 7.60253 3.65549 7.60253Z" fill="black"/>
+                      </svg>
+                    </div>
+                    <div class="cs_slider_next filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
+                      <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.5389 4.4077H0.462014C0.235091 4.4077 0.0517578 4.22437 0.0517578 3.99745C0.0517578 3.77052 0.235091 3.58719 0.462014 3.58719H18.5479L16.0582 1.09745C15.8979 0.937189 15.8979 0.676933 16.0582 0.516677C16.2184 0.35642 16.4787 0.35642 16.6389 0.516677L19.83 3.7077C19.9479 3.82565 19.9825 4.00129 19.9184 4.15514C19.8543 4.3077 19.7043 4.4077 19.5389 4.4077Z" fill="#18191D"/>
+                        <path d="M16.3445 7.60253C16.2394 7.60253 16.1342 7.56278 16.0548 7.48202C15.8945 7.32176 15.8945 7.0615 16.0548 6.90125L19.2496 3.70637C19.4099 3.54612 19.6701 3.54612 19.8304 3.70637C19.9907 3.86663 19.9907 4.12689 19.8304 4.28714L16.6355 7.48202C16.5548 7.56278 16.4496 7.60253 16.3445 7.60253Z" fill="#18191D"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="cs_slider_activate">
+                    <div class="cs_slide">
+                      <div class="cs_testimonial cs_style_1 cs_pt_20">
+                        <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                          <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_1.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                          <div class="cs_rating text-accent cs_mb_15" data-rating="5">
+                            <div class="cs_rating_percentage"></div>
+                          </div>
+                          <p class="cs_mb_14">엔탑포지션과 함께한 온라인 마케팅 덕분에 매출이 3배 이상 증가했습니다. 전문적이고 체계적인 서비스에 매우 만족합니다.</p>
+                          <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">김민수 대표</h3>
+                          <p class="m-0 cs_fs_14 cs_lh_base">프랜차이즈 본사</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cs_slide">
+                      <div class="cs_testimonial cs_style_1 cs_pt_20">
+                        <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                          <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_2.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                          <div class="cs_rating text-accent cs_mb_15" data-rating="5">
+                            <div class="cs_rating_percentage"></div>
+                          </div>
+                          <p class="cs_mb_14">검색광고부터 SNS 마케팅까지 통합적으로 관리해주셔서 정말 편리했습니다. 결과도 기대 이상이었어요!</p>
+                          <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">박지영 원장</h3>
+                          <p class="m-0 cs_fs_14 cs_lh_base">치과 의원</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cs_slide">
+                      <div class="cs_testimonial cs_style_1 cs_pt_20">
+                        <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                          <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_3.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                          <div class="cs_rating text-accent cs_mb_15" data-rating="4.5">
+                            <div class="cs_rating_percentage"></div>
+                          </div>
+                          <p class="cs_mb_14">바이럴 마케팅을 통해 브랜드 인지도가 크게 상승했습니다. 전문가들의 세심한 관리가 인상적이었습니다.</p>
+                          <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">이준호 대표</h3>
+                          <p class="m-0 cs_fs_14 cs_lh_base">화장품 브랜드</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cs_slide">
+                      <div class="cs_testimonial cs_style_1 cs_pt_20">
+                        <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                          <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_1.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                          <div class="cs_rating text-accent cs_mb_15" data-rating="5">
+                            <div class="cs_rating_percentage"></div>
+                          </div>
+                          <p class="cs_mb_14">ROI 중심의 광고 집행으로 비용 대비 효과가 매우 높았습니다. 데이터 분석 리포트도 상세해서 좋았어요.</p>
+                          <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">최서연 실장</h3>
+                          <p class="m-0 cs_fs_14 cs_lh_base">온라인 쇼핑몰</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cs_slide">
+                      <div class="cs_testimonial cs_style_1 cs_pt_20">
+                        <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                          <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_2.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                          <div class="cs_rating text-accent cs_mb_15" data-rating="5">
+                            <div class="cs_rating_percentage"></div>
+                          </div>
+                          <p class="cs_mb_14">학원 마케팅 캠페인 진행 후 상담 문의가 2배 이상 늘었습니다. 타겟 설정이 정말 정확했어요.</p>
+                          <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">정현우 원장</h3>
+                          <p class="m-0 cs_fs_14 cs_lh_base">입시학원</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cs_slide">
+                      <div class="cs_testimonial cs_style_1 cs_pt_20">
+                        <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                          <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_3.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                          <div class="cs_rating text-accent cs_mb_15" data-rating="5">
+                            <div class="cs_rating_percentage"></div>
+                          </div>
+                          <p class="cs_mb_14">콘텐츠 마케팅 전략이 탁월했습니다. 브랜드 이미지도 개선되고 고객 충성도도 높아졌어요.</p>
+                          <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">강민지 대표</h3>
+                          <p class="m-0 cs_fs_14 cs_lh_base">건강식품 브랜드</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Testimonial Section -->
+
+        <style>
+            .service-content-section {
+                padding: 100px 0;
+                background: #fff;
+            }
+
+            .service-content-section .inner {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .section-title {
+                font-size: 48px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 30px;
+                color: #1a1a1a;
+            }
+
+            .section-description {
+                font-size: 18px;
+                line-height: 1.8;
+                text-align: center;
+                color: #666;
+            }
+
+            @media (max-width: 768px) {
+                .section-title {
+                    font-size: 32px;
+                    margin-bottom: 20px;
+                }
+
+                .section-description {
+                    font-size: 16px;
+                }
+            }
+        </style>
+
+    </div>
+
+</body>
+</html>

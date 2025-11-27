@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{UI/layouts/user/main_layout}"
+      >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔탑포지션</title>
+</head>
+
+<body layout:fragment="content">
+  <div class="content-wrap" id="print_area" >
+          <!-- Video Background Section -->
+          <section id="video-background-section">
+              <div class="video-slider-container">
+                  <div class="swiper videoSwiper">
+                      <div class="swiper-wrapper">
+                          <!-- Slide 1 -->
+                          <div class="swiper-slide">
+                              <div class="video-wrapper">
+                                  <video autoplay muted loop playsinline>
+                                      <source src="../../video/service_automation_video1.mp4" type="video/mp4">
+                                  </video>
+                                  <div class="slide-overlay">
+                                      <div class="slide-content">
+                                          <h2 class="slide-title animate-fade-up">생산성</h2>
+                                          <p class="slide-description animate-fade-up delay-1">반복 업무를 자동화해 시간과 비용을 절약합니다.</p>
+                                          <p class="slide-description animate-fade-up delay-2">최적화된 자동화 프로그램으로 업무 생산성을 극대화하세요.</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- Slide 2 -->
+                          <div class="swiper-slide">
+                              <div class="video-wrapper">
+                                  <video autoplay muted loop playsinline>
+                                      <source src="../../video/service_automation_video2.mp4" type="video/mp4">
+                                  </video>
+                                  <div class="slide-overlay">
+                                      <div class="slide-content">
+                                          <h2 class="slide-title animate-fade-up">속도 경쟁력</h2>
+                                          <p class="slide-description animate-fade-up delay-1">데이터 처리부터 운영까지 자동으로 흐르는 스마트 시스템.</p>
+                                          <p class="slide-description animate-fade-up delay-2">자동화 개발로 기업의 속도와 경쟁력을 높여드립니다.</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- Slide 3 -->
+                          <div class="swiper-slide">
+                              <div class="video-wrapper">
+                                  <video autoplay muted loop playsinline>
+                                      <source src="../../video/service_automation_video3.mp4" type="video/mp4">
+                                  </video>
+                                  <div class="slide-overlay">
+                                      <div class="slide-content">
+                                          <h2 class="slide-title animate-fade-up">트렌디 기술</h2>
+                                          <p class="slide-description animate-fade-up delay-1">AI·RPA 기반 자동화로 비즈니스를 한 단계 진화시키세요.</p>
+                                          <p class="slide-description animate-fade-up delay-2">더 빠르고 더 정확한 프로세스를 구현하는 맞춤형 솔루션.</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Pagination -->
+                      <div class="swiper-pagination"></div>
+                  </div>
+              </div>
+
+              <script>
+                  document.addEventListener('DOMContentLoaded', function() {
+                      const videoSwiper = new Swiper('.videoSwiper', {
+                          loop: true,
+                          speed: 1000,
+                          autoplay: {
+                              delay: 5000,
+                              disableOnInteraction: false,
+                          },
+                          effect: 'fade',
+                          fadeEffect: {
+                              crossFade: true
+                          },
+                          grabCursor: true,
+                          pagination: {
+                              el: '.swiper-pagination',
+                              clickable: true,
+                          },
+                          on: {
+                              slideChange: function() {
+                                  // 모든 비디오 일시정지
+                                  document.querySelectorAll('.videoSwiper video').forEach(video => {
+                                      video.pause();
+                                  });
+
+                                  // 현재 슬라이드의 비디오 재생
+                                  const activeSlide = this.slides[this.activeIndex];
+                                  const activeVideo = activeSlide.querySelector('video');
+                                  if (activeVideo) {
+                                      activeVideo.play();
+                                  }
+                              },
+                              init: function() {
+                                  // 첫 번째 슬라이드 비디오 재생
+                                  const activeSlide = this.slides[this.activeIndex];
+                                  const activeVideo = activeSlide.querySelector('video');
+                                  if (activeVideo) {
+                                      activeVideo.play();
+                                  }
+                              }
+                          }
+                      });
+                  });
+              </script>
+          </section>
+
+
+          <!-- Start Service Details Section -->
+          <section class="cs_pt_140 cs_pt_lg_80 cs_pb_115 cs_pb_lg_55">
+            <div class="container">
+              <div class="cs_section_heading cs_style_1 text-center cs_mb_60 cs_mb_lg_40">
+                <div class="cs_section_heading_in">
+                  <h3 class="cs_fs_20 text-accent fw-normal cs_lh_base" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">자동화 프로그램 서비스</h3>
+                  <h2 class="cs_fs_48 cs_fs_lg_36 m-0" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">반복 업무를 자동화해 시간을 절약하고 효율을 극대화합<br>비즈니스 성장을 가속하는 맞춤형 자동화 솔루션</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-3 col-md-6">
+                  <div class="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                      <div class="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20 2c-1.1 0-2 .9-2 2v1.17c-1.6.41-3.08 1.13-4.38 2.09l-.83-.83c-.78-.78-2.05-.78-2.83 0l-2.83 2.83c-.78.78-.78 2.05 0 2.83l.83.83c-.96 1.3-1.68 2.78-2.09 4.38H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h1.17c.41 1.6 1.13 3.08 2.09 4.38l-.83.83c-.78.78-.78 2.05 0 2.83l2.83 2.83c.78.78 2.05.78 2.83 0l.83-.83c1.3.96 2.78 1.68 4.38 2.09V36c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-1.17c1.6-.41 3.08-1.13 4.38-2.09l.83.83c.78.78 2.05.78 2.83 0l2.83-2.83c.78-.78.78-2.05 0-2.83l-.83-.83c.96-1.3 1.68-2.78 2.09-4.38H36c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2h-1.17c-.41-1.6-1.13-3.08-2.09-4.38l.83-.83c.78-.78.78-2.05 0-2.83l-2.83-2.83c-.78-.78-2.05-.78-2.83 0l-.83.83c-1.3-.96-2.78-1.68-4.38-2.09V4c0-1.1-.9-2-2-2h-4zm2 14c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6 2.69-6 6-6z" fill="white"/>
+                        </svg>
+                      </div>
+                      <h2 class="cs_lh_base cs_fs_20 m-0">업무 프로세스 자동화</h2>
+                    </div>
+                    <p class="cs_mb_24">반복되는 업무를 자동화해 시간과 비용을 절약하고, 사람이 해야 할 일에 집중할 수 있는 스마트한 업무 환경을 제공합니다.</p>
+                    <div class="cs_service_thumb position-relative cs_rounded_5">
+                      <div class="cs_service_thumb-in position-relative-in background-filled h-100" style="background-image: url('../../assets/img/automation_image01.jpg');"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                  <div class="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                      <div class="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H6zm20 0c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-8zM6 24c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2H6zm20 0c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2h-8zM8 8h4v4H8V8zm20 0h4v4h-4V8zM8 28h4v4H8v-4zm20 0h4v4h-4v-4z" fill="white"/>
+                        </svg>
+                      </div>
+                      <h2 class="cs_lh_base cs_fs_20 m-0">데이터 수집·정제 자동화</h2>
+                    </div>
+                    <p class="cs_mb_24">웹 크롤링부터 데이터 정제·적재까지, 필요한 정보를 자동으로 수집하고 관리하여 비즈니스 경쟁력을 극대화합니다.</p>
+                    <div class="cs_service_thumb position-relative cs_rounded_5">
+                      <div class="cs_service_thumb-in position-relative-in background-filled h-100" style="background-image: url('../../assets/img/automation_image02.jpg');"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                  <div class="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25" data-aos="fade-up" data-aos-delay="300">
+                    <div class="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                      <div class="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20 4c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zM8 16c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm24 0c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zM20 14v-2m0 16v-2m-8-6h-2m18 0h-2m-5.17-9.66l-1.42-1.42m10.34 10.34l-1.42-1.42m-11.5 0l-1.42 1.42m10.34 10.34l-1.42 1.42" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+                      <h2 class="cs_lh_base cs_fs_20 m-0">시스템 연동 자동화</h2>
+                    </div>
+                    <p class="cs_mb_24">흩어진 프로그램과 데이터를 하나로 연결해, 더 빠르게 작동하고 더 효율적으로 움직이는 최적의 자동화 시스템을 구축합니다.</p>
+                    <div class="cs_service_thumb position-relative cs_rounded_5">
+                      <div class="cs_service_thumb-in position-relative-in background-filled h-100" style="background-image: url('../../assets/img/automation_image03.jpg');"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                  <div class="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25" data-aos="fade-up" data-aos-delay="400">
+                    <div class="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                      <div class="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4 6c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h32c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2H4zm0 4h32v16H4V10zm6 2v4h4v-4h-4zm6 0v8h4v-8h-4zm6 0v6h4v-6h-4zm6 0v10h4V12h-4zM20 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-8 28c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm16 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="white"/>
+                        </svg>
+                      </div>
+                      <h2 class="cs_lh_base cs_fs_20 m-0">모니터링·알림·보고 자동화</h2>
+                    </div>
+                    <p class="cs_mb_24">실시간 모니터링과 자동 알림, 자동 보고 시스템으로 장애 없는 운영과 즉각적인 대응이 가능한 안정적인 운영 환경을 제공합니다.</p>
+                    <div class="cs_service_thumb position-relative cs_rounded_5">
+                      <div class="cs_service_thumb-in position-relative-in background-filled h-100" style="background-image: url('../../assets/img/automation_image04.jpg');"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End Service Details Section -->
+
+          <!-- Start Brand Section -->
+          <div class="bg-gray cs_pt_110 cs_pb_110">
+            <div class="container">
+              <div class="cs_brands d-flex justify-content-xl-between align-items-center cs_column_gap_25 cs_row_gap_25 flex-wrap justify-content-center">
+                <div class="cs_brand" data-aos="fade-up" data-aos-delay="100"><img src="../../assets/img/brand_1.svg" alt="Brand"></div>
+                <div class="cs_brand" data-aos="fade-up" data-aos-delay="200"><img src="../../assets/img/brand_2.svg" alt="Brand"></div>
+                <div class="cs_brand" data-aos="fade-up" data-aos-delay="300"><img src="../../assets/img/brand_3.svg" alt="Brand"></div>
+                <div class="cs_brand" data-aos="fade-up" data-aos-delay="400"><img src="../../assets/img/brand_4.svg" alt="Brand"></div>
+                <div class="cs_brand" data-aos="fade-up" data-aos-delay="500"><img src="../../assets/img/brand_5.svg" alt="Brand"></div>
+              </div>
+            </div>
+          </div>
+          <!-- End Brand Section -->
+
+          <!-- Start Testimonial Section -->
+          <section class="background-filled cs_pt_140 cs_pt_lg_75 cs_pb_135 cs_pb_lg_75" style="background-image: url('../../assets/img/testimonial_bg.jpeg'); background-size: cover; background-position: center;">
+            <div class="cs_testimonial_slider cs_gap_30">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-4 cs_mb_lg_40">
+                    <div class="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_30">
+                      <div class="cs_section_heading_in">
+                        <h3 class="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">고객 후기</h3>
+                        <h2 class="cs_fs_48 cs_fs_lg_36 cs_mb_20" data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">고객님들의<br>생생한 후기</h2>
+                        <p class="m-0">엔탑포지션과 함께한 고객사들의 진솔한 이야기를 들어보세요.</p>
+                      </div>
+                    </div>
+                    <div class="d-flex cs_column_gap_15">
+                      <div class="cs_slider_prev filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
+                        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.461063 4.4077H19.538C19.7649 4.4077 19.9482 4.22437 19.9482 3.99745C19.9482 3.77052 19.7649 3.58719 19.538 3.58719H1.45209L3.94183 1.09745C4.10209 0.937189 4.10209 0.676933 3.94183 0.516677C3.78158 0.35642 3.52132 0.35642 3.36106 0.516677L0.170038 3.7077C0.0520878 3.82565 0.0174732 4.00129 0.0815754 4.15514C0.145678 4.3077 0.295677 4.4077 0.461063 4.4077Z" fill="black"/>
+                          <path d="M3.65549 7.60253C3.76062 7.60253 3.86575 7.56278 3.94524 7.48202C4.10549 7.32176 4.10549 7.0615 3.94524 6.90125L0.750365 3.70637C0.590108 3.54612 0.329853 3.54612 0.169597 3.70637C0.00934029 3.86663 0.00934029 4.12689 0.169597 4.28714L3.36447 7.48202C3.44524 7.56278 3.55036 7.60253 3.65549 7.60253Z" fill="black"/>
+                        </svg>
+                      </div>
+                      <div class="cs_slider_next filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
+                        <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M19.5389 4.4077H0.462014C0.235091 4.4077 0.0517578 4.22437 0.0517578 3.99745C0.0517578 3.77052 0.235091 3.58719 0.462014 3.58719H18.5479L16.0582 1.09745C15.8979 0.937189 15.8979 0.676933 16.0582 0.516677C16.2184 0.35642 16.4787 0.35642 16.6389 0.516677L19.83 3.7077C19.9479 3.82565 19.9825 4.00129 19.9184 4.15514C19.8543 4.3077 19.7043 4.4077 19.5389 4.4077Z" fill="#18191D"/>
+                          <path d="M16.3445 7.60253C16.2394 7.60253 16.1342 7.56278 16.0548 7.48202C15.8945 7.32176 15.8945 7.0615 16.0548 6.90125L19.2496 3.70637C19.4099 3.54612 19.6701 3.54612 19.8304 3.70637C19.9907 3.86663 19.9907 4.12689 19.8304 4.28714L16.6355 7.48202C16.5548 7.56278 16.4496 7.60253 16.3445 7.60253Z" fill="#18191D"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="cs_slider_activate">
+                      <div class="cs_slide">
+                        <div class="cs_testimonial cs_style_1 cs_pt_20">
+                          <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                            <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_1.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                            <div class="cs_rating text-accent cs_mb_15" data-rating="5">
+                              <div class="cs_rating_percentage"></div>
+                            </div>
+                            <p class="cs_mb_14">엔탑포지션과 함께한 온라인 마케팅 덕분에 매출이 3배 이상 증가했습니다. 전문적이고 체계적인 서비스에 매우 만족합니다.</p>
+                            <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">김민수 대표</h3>
+                            <p class="m-0 cs_fs_14 cs_lh_base">프랜차이즈 본사</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs_slide">
+                        <div class="cs_testimonial cs_style_1 cs_pt_20">
+                          <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                            <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_2.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                            <div class="cs_rating text-accent cs_mb_15" data-rating="5">
+                              <div class="cs_rating_percentage"></div>
+                            </div>
+                            <p class="cs_mb_14">검색광고부터 SNS 마케팅까지 통합적으로 관리해주셔서 정말 편리했습니다. 결과도 기대 이상이었어요!</p>
+                            <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">박지영 원장</h3>
+                            <p class="m-0 cs_fs_14 cs_lh_base">치과 의원</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs_slide">
+                        <div class="cs_testimonial cs_style_1 cs_pt_20">
+                          <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                            <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_3.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                            <div class="cs_rating text-accent cs_mb_15" data-rating="4.5">
+                              <div class="cs_rating_percentage"></div>
+                            </div>
+                            <p class="cs_mb_14">바이럴 마케팅을 통해 브랜드 인지도가 크게 상승했습니다. 전문가들의 세심한 관리가 인상적이었습니다.</p>
+                            <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">이준호 대표</h3>
+                            <p class="m-0 cs_fs_14 cs_lh_base">화장품 브랜드</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs_slide">
+                        <div class="cs_testimonial cs_style_1 cs_pt_20">
+                          <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                            <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_1.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                            <div class="cs_rating text-accent cs_mb_15" data-rating="5">
+                              <div class="cs_rating_percentage"></div>
+                            </div>
+                            <p class="cs_mb_14">ROI 중심의 광고 집행으로 비용 대비 효과가 매우 높았습니다. 데이터 분석 리포트도 상세해서 좋았어요.</p>
+                            <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">최서연 실장</h3>
+                            <p class="m-0 cs_fs_14 cs_lh_base">온라인 쇼핑몰</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs_slide">
+                        <div class="cs_testimonial cs_style_1 cs_pt_20">
+                          <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                            <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_2.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                            <div class="cs_rating text-accent cs_mb_15" data-rating="5">
+                              <div class="cs_rating_percentage"></div>
+                            </div>
+                            <p class="cs_mb_14">학원 마케팅 캠페인 진행 후 상담 문의가 2배 이상 늘었습니다. 타겟 설정이 정말 정확했어요.</p>
+                            <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">정현우 원장</h3>
+                            <p class="m-0 cs_fs_14 cs_lh_base">입시학원</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cs_slide">
+                        <div class="cs_testimonial cs_style_1 cs_pt_20">
+                          <div class="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
+                            <div class="cs_testimonial_img cs_mb_15"><img src="../../assets/img/avatar_3.png" alt="Avatar" class="cs_height_75 cs_width_75 rounded-circle"></div>
+                            <div class="cs_rating text-accent cs_mb_15" data-rating="5">
+                              <div class="cs_rating_percentage"></div>
+                            </div>
+                            <p class="cs_mb_14">콘텐츠 마케팅 전략이 탁월했습니다. 브랜드 이미지도 개선되고 고객 충성도도 높아졌어요.</p>
+                            <h3 class="cs_fs_18 cs_mb_2 cs_lh_base">강민지 대표</h3>
+                            <p class="m-0 cs_fs_14 cs_lh_base">건강식품 브랜드</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End Testimonial Section -->
+
+          <style>
+              .service-content-section {
+                  padding: 100px 0;
+                  background: #fff;
+              }
+
+              .service-content-section .inner {
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 0 20px;
+              }
+
+              .section-title {
+                  font-size: 48px;
+                  font-weight: 700;
+                  text-align: center;
+                  margin-bottom: 30px;
+                  color: #1a1a1a;
+              }
+
+              .section-description {
+                  font-size: 18px;
+                  line-height: 1.8;
+                  text-align: center;
+                  color: #666;
+              }
+
+              @media (max-width: 768px) {
+                  .section-title {
+                      font-size: 32px;
+                      margin-bottom: 20px;
+                  }
+
+                  .section-description {
+                      font-size: 16px;
+                  }
+              }
+          </style>
+
+  </div>
+</body>
+</html>

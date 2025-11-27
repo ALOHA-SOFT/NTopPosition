@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{UI/layouts/user/main_layout}"
+      >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔탑포지션</title>
+</head>
+<body layout:fragment="content">
+
+  <div class="main-content-wrap" id="print_area">
+        <section id="main01">
+            <div class="video-slider-container">
+                <div class="swiper videoSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="/video/video1.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">사업을 함께 성장시키는</h2>
+                                        <p class="slide-description animate-fade-up delay-1">마케팅 파트너 엔탑포지션</p>
+                                        <a href="./contact/contact.html" class="cta-button animate-fade-up delay-2">상담 문의하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="/video/video2.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">데이터 기반의 마케팅 전략</h2>
+                                        <p class="slide-description animate-fade-up delay-1">성과를 만드는 디지털 마케팅 파트너</p>
+                                        <a href="./service/online-marketing.html" class="cta-button animate-fade-up delay-2">서비스 보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="/video/video3.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">브랜드 가치를 높이는</h2>
+                                        <p class="slide-description animate-fade-up delay-1">창의적인 마케팅 솔루션</p>
+                                        <a href="./portfolio/portfolio.html" class="cta-button animate-fade-up delay-2">포트폴리오 보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <!-- <div class="swiper-button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div> -->
+                    
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!-- Stats Counter Section -->
+            <div class="stats-counter-section">
+                <div class="stats-container">
+                    <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
+                        <h3 class="stat-title">함께한 기업수</h3>
+                        <div class="stat-number">
+                            <span class="counter" data-target="651">0</span>
+                            <span class="stat-unit">개</span>
+                        </div>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <h3 class="stat-title">진행 프로젝트 수</h3>
+                        <div class="stat-number">
+                            <span class="counter" data-target="1157">0</span>
+                            <span class="stat-unit">개</span>
+                        </div>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <h3 class="stat-title">함께하는 클라이언트</h3>
+                        <div class="stat-number">
+                            <span class="counter" data-target="52">0</span>
+                            <span class="stat-unit">개</span>
+                        </div>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <h3 class="stat-title">재계약률</h3>
+                        <div class="stat-number">
+                            <span class="counter" data-target="72.53">0</span>
+                            <span class="stat-unit">%</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="stats-note">*21년 8월 ~ 24년 11월 기준</p>
+            </div>
+
+
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const videoSwiper = new Swiper('.videoSwiper', {
+                        loop: true,
+                        speed: 1000,
+                        autoplay: {
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        },
+                        effect: 'fade',
+                        fadeEffect: {
+                            crossFade: true
+                        },
+                        grabCursor: true,
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        on: {
+                            slideChange: function() {
+                                // 모든 비디오 일시정지
+                                document.querySelectorAll('.videoSwiper video').forEach(video => {
+                                    video.pause();
+                                });
+                                
+                                // 현재 슬라이드의 비디오 재생
+                                const activeSlide = this.slides[this.activeIndex];
+                                const activeVideo = activeSlide.querySelector('video');
+                                if (activeVideo) {
+                                    activeVideo.play();
+                                }
+                            },
+                            init: function() {
+                                // 첫 번째 슬라이드 비디오 재생
+                                const activeSlide = this.slides[this.activeIndex];
+                                const activeVideo = activeSlide.querySelector('video');
+                                if (activeVideo) {
+                                    activeVideo.play();
+                                }
+                            }
+                        }
+                    });
+
+                    // Counter Animation
+                    const counters = document.querySelectorAll('.counter');
+                    let isAnimating = false;
+
+                    const animateCounter = (counter) => {
+                        return new Promise((resolve) => {
+                            const target = parseFloat(counter.getAttribute('data-target'));
+                            const duration = 2000; // 2초
+                            const increment = target / (duration / 16); // 60fps 기준
+                            let current = 0;
+                            const isDecimal = target % 1 !== 0;
+
+                            const updateCounter = () => {
+                                current += increment;
+                                if (current < target) {
+                                    counter.textContent = isDecimal ? current.toFixed(2) : Math.floor(current).toLocaleString();
+                                    requestAnimationFrame(updateCounter);
+                                } else {
+                                    counter.textContent = isDecimal ? target.toFixed(2) : Math.floor(target).toLocaleString();
+                                    resolve();
+                                }
+                            };
+
+                            updateCounter();
+                        });
+                    };
+
+                    const animateAllCounters = async () => {
+                        if (isAnimating) return;
+                        isAnimating = true;
+
+                        // 모든 카운터를 0으로 리셋
+                        counters.forEach(counter => {
+                            counter.textContent = '0';
+                        });
+
+                        // 모든 카운터 애니메이션 실행
+                        await Promise.all(Array.from(counters).map(counter => animateCounter(counter)));
+
+                        // 애니메이션 완료 후 2초 대기
+                        setTimeout(() => {
+                            isAnimating = false;
+                            animateAllCounters(); // 다시 반복
+                        }, 2000);
+                    };
+
+                    // Intersection Observer로 카운터 애니메이션 트리거
+                    const observerOptions = {
+                        threshold: 0.5
+                    };
+
+                    let hasStarted = false;
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting && !hasStarted) {
+                                hasStarted = true;
+                                animateAllCounters();
+                            }
+                        });
+                    }, observerOptions);
+
+                    const statsSection = document.querySelector('.stats-counter-section');
+                    if (statsSection) {
+                        observer.observe(statsSection);
+                    }
+
+                    // AOS 초기화
+                    AOS.init({
+                        duration: 800,
+                        easing: 'ease-in-out',
+                        once: true,
+                        mirror: false
+                    });
+                });
+            </script>
+
+            <!-- Stats Counter Styles -->
+            <style>
+                .stats-counter-section {
+                    position: absolute;
+                    bottom: 80px;
+                    left: 0;
+                    right: 0;
+                    z-index: 10;
+                    padding: 0 50px;
+                }
+
+                .stats-container {
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 40px;
+                    padding: 40px;
+                }
+
+                .stat-item {
+                    text-align: center;
+                    color: white;
+                }
+
+                .stat-title {
+                    font-size: 18px;
+                    font-weight: 400;
+                    margin-bottom: 15px;
+                    color: #f5c842;
+                    letter-spacing: 0.5px;
+                }
+
+                .stat-number {
+                    font-size: 56px;
+                    font-weight: 700;
+                    line-height: 1;
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: center;
+                    gap: 5px;
+                }
+
+                .counter {
+                    font-family: 'Arial', sans-serif;
+                }
+
+                .stat-unit {
+                    font-size: 24px;
+                    font-weight: 400;
+                    margin-left: 5px;
+                }
+
+                .stats-note {
+                    text-align: center;
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 14px;
+                    margin-top: 20px;
+                    letter-spacing: 0.5px;
+                }
+
+                /* 태블릿 */
+                @media screen and (max-width: 1024px) {
+                    .stats-counter-section {
+                        bottom: 60px;
+                        padding: 0 30px;
+                    }
+
+                    .stats-container {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 30px;
+                        padding: 30px;
+                    }
+
+                    .stat-number {
+                        font-size: 48px;
+                    }
+
+                    .stat-title {
+                        font-size: 16px;
+                    }
+                }
+
+                /* 모바일 */
+                @media screen and (max-width: 768px) {
+                    .stats-counter-section {
+                        bottom: 40px;
+                        padding: 0 20px;
+                    }
+
+                    .stats-container {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 20px;
+                        padding: 20px;
+                    }
+
+                    .stat-number {
+                        font-size: 36px;
+                    }
+
+                    .stat-unit {
+                        font-size: 18px;
+                    }
+
+                    .stat-title {
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                    }
+
+                    .stats-note {
+                        font-size: 12px;
+                        margin-top: 15px;
+                    }
+                }
+            </style>
+        </section>
+
+        <!-- Animated Text -->
+        <div class="cs_moving_wrap background-filled text-uppercase text-white d-flex align-items-center" data-src="assets/img/moving_text_shape.png">
+            <div class="cs_moving_text cs_fs_30 cs_fs_lg_26 d-flex align-items-center text-nowrap">
+            <span>⚡ 온라인 마케팅</span>
+            <span>⚡ TV광고</span>
+            <span>⚡ 미디어PPL</span>
+            <span>⚡ 숏폼콜백</span>
+            <span>⚡ 학원마케팅</span>
+            <span>⚡ 콘텐츠·개발·웹</span>
+            <span>⚡ 홈페이지제작</span>
+            <span>⚡ 자동화 프로그램 개발</span>
+            </div>
+            <div class="cs_moving_text cs_fs_30 d-flex align-items-center text-nowrap">
+            <span>⚡ 온라인 마케팅</span>
+            <span>⚡ TV광고</span>
+            <span>⚡ 미디어PPL</span>
+            <span>⚡ 숏폼콜백</span>
+            <span>⚡ 학원마케팅</span>
+            <span>⚡ 콘텐츠·개발·웹</span>
+            <span>⚡ 홈페이지제작</span>
+            <span>⚡ 자동화 프로그램 개발</span>
+            </div>
+            <div class="cs_moving_text cs_fs_30 d-flex align-items-center text-nowrap">
+            <span>⚡ 온라인 마케팅</span>
+            <span>⚡ TV광고</span>
+            <span>⚡ 미디어PPL</span>
+            <span>⚡ 숏폼콜백</span>
+            <span>⚡ 학원마케팅</span>
+            <span>⚡ 콘텐츠·개발·웹</span>
+            <span>⚡ 홈페이지제작</span>
+            <span>⚡ 자동화 프로그램 개발</span>
+            </div>
+        </div>
+
+
+        <!-- 서비스 슬라이드 Section -->
+        <section class="cs_pb_115 cs_pb_lg_55 bg-white py-5">
+          <div class="container py-5">
+            <div class="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_60 cs_mb_lg_40">
+              <div class="cs_section_heading_in">
+                <h3 class="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">20년 경력의 광고실행사 엔탑포지션</h3>
+                <h2 class="cs_fs_48 cs_fs_lg_36 m-0 text-black" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">본업에만 집중하세요.<br>광고 실행은 저희가 책임집니다.</h2>
+              </div>
+            </div>
+            <!-- Swiper Team Slider -->
+            <div class="swiper team-swiper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+                    <div class="cs_team_member position-relative cs_rounded_50">
+                      <img class="w-100 cs_rounded_50" src="./img/main/start/01.png" alt="온라인 마케팅">
+                      <div class="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-brands fa-google"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-brands fa-instagram"></i></a>
+                      </div>
+                    </div>
+                    <div class="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                      <h2 class="text-white m-0 cs_fs_26 cs_mb_3">온라인 마케팅</h2>
+                      <p class="text-white m-0">SNS·검색광고·배너</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+                    <div class="cs_team_member position-relative cs_rounded_50">
+                      <img class="w-100 cs_rounded_50" src="./img/main/start/02.png" alt="TV광고">
+                      <div class="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-tv"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-film"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-broadcast-tower"></i></a>
+                      </div>
+                    </div>
+                    <div class="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                      <h2 class="text-white m-0 cs_fs_26 cs_mb_3">TV광고</h2>
+                      <p class="text-white m-0">지상파·케이블·IPTV</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+                    <div class="cs_team_member position-relative cs_rounded_50">
+                      <img class="w-100 cs_rounded_50" src="./img/main/start/03.png" alt="미디어PPL">
+                      <div class="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-video"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-star"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-clapperboard"></i></a>
+                      </div>
+                    </div>
+                    <div class="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                      <h2 class="text-white m-0 cs_fs_26 cs_mb_3">미디어PPL</h2>
+                      <p class="text-white m-0">드라마·예능·영화</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+                    <div class="cs_team_member position-relative cs_rounded_50">
+                      <img class="w-100 cs_rounded_50" src="./img/main/start/04.png" alt="숏폼콜백">
+                      <div class="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-mobile-screen"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-play"></i></a>
+                      </div>
+                    </div>
+                    <div class="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                      <h2 class="text-white m-0 cs_fs_26 cs_mb_3">숏폼콜백</h2>
+                      <p class="text-white m-0">유튜브·인스타·틱톡</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+                    <div class="cs_team_member position-relative cs_rounded_50">
+                      <img class="w-100 cs_rounded_50" src="./img/main/start/05.png" alt="학원마케팅">
+                      <div class="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-graduation-cap"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-school"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-book"></i></a>
+                      </div>
+                    </div>
+                    <div class="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                      <h2 class="text-white m-0 cs_fs_26 cs_mb_3">학원마케팅</h2>
+                      <p class="text-white m-0">홍보·컨설팅·관리</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+                    <div class="cs_team_member position-relative cs_rounded_50">
+                      <img class="w-100 cs_rounded_50" src="./img/main/start/06.png" alt="콘텐츠·개발·웹">
+                      <div class="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-code"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-laptop-code"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-window-maximize"></i></a>
+                      </div>
+                    </div>
+                    <div class="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                      <h2 class="text-white m-0 cs_fs_26 cs_mb_3">콘텐츠·개발·웹</h2>
+                      <p class="text-white m-0">웹개발·앱개발·디자인</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+                    <div class="cs_team_member position-relative cs_rounded_50">
+                      <img class="w-100 cs_rounded_50" src="./img/main/start/07.png" alt="홈페이지제작">
+                      <div class="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-globe"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-desktop"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-palette"></i></a>
+                      </div>
+                    </div>
+                    <div class="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                      <h2 class="text-white m-0 cs_fs_26 cs_mb_3">홈페이지제작</h2>
+                      <p class="text-white m-0">반응형·워드프레스·쇼핑몰</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+                    <div class="cs_team_member position-relative cs_rounded_50">
+                      <img class="w-100 cs_rounded_50" src="./img/main/start/08.png" alt="자동화 프로그램 개발">
+                      <div class="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-robot"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-gears"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"><i class="fa-solid fa-bolt"></i></a>
+                      </div>
+                    </div>
+                    <div class="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                      <h2 class="text-white m-0 cs_fs_26 cs_mb_3">자동화 프로그램 개발</h2>
+                      <p class="text-white m-0">업무자동화·크롤링·RPA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Navigation buttons -->
+              <div class="swiper-button-next team-next"></div>
+              <div class="swiper-button-prev team-prev"></div>
+              <!-- Pagination -->
+              <div class="swiper-pagination team-pagination" style="bottom: -5px !important;"></div>
+            </div>
+          </div>
+          </section>
+        <!-- End 서비스 슬라이드 Section -->
+
+        <!-- 스크롤 카드 섹션 -->
+        <section class="cs_scroll_cards_section cs_pt_80 cs_pb_80 bg-white">
+          <div class="container">
+            <div class="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_60 cs_mb_lg_40">
+              <div class="cs_section_heading_in">
+                <h3 class="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">마케팅 컨설팅</h3>
+                <h2 class="cs_fs_48 cs_fs_lg_36 m-0 text-black" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">고객사 맞춤 컨설팅을 통해<br>가장 효과적인<br>솔루션을 제안드립니다.</h2>
+              </div>
+            </div>
+            <div class="row">
+              <!-- 왼쪽: 스크롤 인디케이터 -->
+              <div class="col-lg-3">
+                <div class="cs_scroll_indicator" data-aos="fade-right" data-aos-duration="800">
+                  <div class="cs_indicator_line">
+                    <div class="cs_indicator_progress" id="scrollProgress"></div>
+                  </div>
+                  <div class="cs_indicator_items">
+                    <div class="cs_indicator_item active" data-target="0">
+                      <span class="cs_indicator_dot"></span>
+                      <span class="cs_indicator_text">Section 01</span>
+                    </div>
+                    <div class="cs_indicator_item" data-target="1">
+                      <span class="cs_indicator_dot"></span>
+                      <span class="cs_indicator_text">Section 02</span>
+                    </div>
+                    <div class="cs_indicator_item" data-target="2">
+                      <span class="cs_indicator_dot"></span>
+                      <span class="cs_indicator_text">Section 03</span>
+                    </div>
+                    <div class="cs_indicator_item" data-target="3">
+                      <span class="cs_indicator_dot"></span>
+                      <span class="cs_indicator_text">Section 04</span>
+                    </div>
+                    <div class="cs_indicator_item" data-target="4">
+                      <span class="cs_indicator_dot"></span>
+                      <span class="cs_indicator_text">Section 05</span>
+                    </div>
+                    <div class="cs_indicator_item" data-target="5">
+                      <span class="cs_indicator_dot"></span>
+                      <span class="cs_indicator_text">Section 06</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 오른쪽: 카드 그리드 -->
+              <div class="col-lg-9">
+                <div class="cs_cards_wrapper">
+                  <!-- Row 1 -->
+                  <div class="row cs_mb_30 cs_card_row" >
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card01.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">온라인 마케팅</h3>
+                          <p class="cs_card_desc">SNS, 검색광고, 배너광고를 통한 효과적인 온라인 마케팅 솔루션을 제공합니다.</p>
+                          <a href="./service/online-marketing.html" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-left" data-aos-duration="800" data-aos-delay="250">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card02.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">TV 광고</h3>
+                          <p class="cs_card_desc">지상파, 케이블, IPTV 등 다양한 채널을 통한 TV 광고 집행을 지원합니다.</p>
+                          <a href="./service/tv-marketing.html" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Row 2 -->
+                  <div class="row cs_mb_30 cs_card_row" >
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-right" data-aos-duration="800" data-aos-delay="350">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card03.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">미디어 PPL</h3>
+                          <p class="cs_card_desc">드라마, 예능, 영화 등 다양한 미디어 콘텐츠 내 PPL 광고를 진행합니다.</p>
+                          <a href="./service/ppl-marketing.html" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-left" data-aos-duration="800" data-aos-delay="500">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card04.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">숏폼 콜라보</h3>
+                          <p class="cs_card_desc">유튜브, 인스타그램, 틱톡 등 숏폼 콘텐츠를 활용한 마케팅을 제공합니다.</p>
+                          <a href="./service/shot-form-callback.html" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Row 3 -->
+                  <div class="row cs_mb_30 cs_card_row" >
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-right" data-aos-duration="800" data-aos-delay="600">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card05.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">학원 마케팅</h3>
+                          <p class="cs_card_desc">학원 홍보, 컨설팅, 관리까지 전문적인 학원 마케팅 서비스를 제공합니다.</p>
+                          <a href="./service/academy-marketing.html" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-left" data-aos-duration="800" data-aos-delay="750">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card06.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">콘텐츠·개발·웹</h3>
+                          <p class="cs_card_desc">웹개발, 앱개발, 디자인까지 토탈 디지털 솔루션을 제공합니다.</p>
+                          <a href="./service/content-development.html" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Row 4 -->
+                  <div class="row cs_mb_30 cs_card_row" >
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-right" data-aos-duration="800" data-aos-delay="850">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card07.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">홈페이지 제작</h3>
+                          <p class="cs_card_desc">반응형, 워드프레스, 쇼핑몰 등 다양한 형태의 홈페이지를 제작합니다.</p>
+                          <a href="./service/website-development.html" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-left" data-aos-duration="800" data-aos-delay="1000">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card08.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">자동화 프로그램 개발</h3>
+                          <p class="cs_card_desc">업무자동화, 크롤링, RPA 등 맞춤형 자동화 솔루션을 개발합니다.</p>
+                          <a href="./service/automation-development.html" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Row 5 -->
+                  <div class="row cs_mb_30 cs_card_row">
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-right" data-aos-duration="800" data-aos-delay="1100">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card09.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">브랜딩 전략</h3>
+                          <p class="cs_card_desc">브랜드 아이덴티티 구축부터 전략 수립까지 전문적인 브랜딩 서비스를 제공합니다.</p>
+                          <a href="#" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-left" data-aos-duration="800" data-aos-delay="1250">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card10.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">영상 제작</h3>
+                          <p class="cs_card_desc">기획부터 촬영, 편집까지 전문적인 영상 콘텐츠를 제작합니다.</p>
+                          <a href="#" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Row 6 -->
+                  <div class="row cs_mb_30 cs_card_row">
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-right" data-aos-duration="800" data-aos-delay="1350">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card11.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">SEO 최적화</h3>
+                          <p class="cs_card_desc">검색엔진 최적화를 통해 웹사이트 노출과 유입을 극대화합니다.</p>
+                          <a href="#" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 cs_mb_25" data-aos="fade-left" data-aos-duration="800" data-aos-delay="1500">
+                      <div class="cs_scroll_card">
+                        <div class="cs_card_bg" style="background-image: url('./img/main/scroll/card12.jpg');"></div>
+                        <div class="cs_card_overlay"></div>
+                        <div class="cs_card_content">
+                          <h3 class="cs_card_title">데이터 분석</h3>
+                          <p class="cs_card_desc">마케팅 데이터 분석을 통해 효율적인 전략 수립을 지원합니다.</p>
+                          <a href="#" class="cs_card_btn">자세히 보기 →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End 스크롤 카드 섹션 -->
+        
+        
+    </div>
+  
+</body>
+</html>

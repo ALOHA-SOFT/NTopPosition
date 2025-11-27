@@ -1,0 +1,64 @@
+<th:block th:fragment="review">
+
+<script>
+
+  // 고객 후기 슬라이더 초기화
+  if ($('.cs_slider_activate').length) {
+    var testimonialSlider = $('.cs_slider_activate').slick({
+      dots: false,
+      infinite: false,
+      speed: 800,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      arrows: true,
+      prevArrow: $('.cs_slider_prev'),
+      nextArrow: $('.cs_slider_next'),
+      fade: false,
+      cssEase: 'ease-in-out',
+      centerMode: false,
+      variableWidth: false,
+      responsive: [
+        {
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+
+    // 슬라이더가 끝에 도달했을 때 처음으로 돌아가기
+    testimonialSlider.on('afterChange', function(event, slick, currentSlide){
+      // 마지막 슬라이드에 도달했는지 확인
+      if (currentSlide >= slick.slideCount - slick.options.slidesToShow) {
+        // 짧은 지연 후 처음으로 돌아가기
+        setTimeout(function() {
+          testimonialSlider.slick('slickGoTo', 0);
+        }, 3000);
+      }
+    });
+  }
+
+
+  
+</script>
+
+
+</th:block>

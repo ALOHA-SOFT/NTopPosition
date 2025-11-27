@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{UI/layouts/user/main_layout}"
+      >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔탑포지션</title>
+</head>
+<body layout:fragment="content">
+<div class="content-wrap" id="print_area" >
+        <!-- Video Background Section -->
+        <section id="video-background-section">
+            <div class="video-slider-container">
+                <div class="swiper videoSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/portfolio_video1.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">“일상의 답을 찾는 ‘엔탑포지션’입니다.”</h2>
+                                        <p class="slide-description animate-fade-up delay-1">세상과의 소통을 통해</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/portfolio_video2.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">“일상의 답을 찾는 ‘엔탑포지션’입니다.”</h2>
+                                        <p class="slide-description animate-fade-up delay-1">고객의 성장과 브랜드 가치 향상을 위한</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/portfolio_video3.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">고객의 성장과 브랜드 가치 향상을 위한</h2>
+                                        <p class="slide-description animate-fade-up delay-1">전문적인 마케팅 & 브랜딩 솔루션을 제공합니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const videoSwiper = new Swiper('.videoSwiper', {
+                        loop: true,
+                        speed: 1000,
+                        autoplay: {
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        },
+                        effect: 'fade',
+                        fadeEffect: {
+                            crossFade: true
+                        },
+                        grabCursor: true,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        on: {
+                            slideChange: function() {
+                                // 모든 비디오 일시정지
+                                document.querySelectorAll('.videoSwiper video').forEach(video => {
+                                    video.pause();
+                                });
+
+                                // 현재 슬라이드의 비디오 재생
+                                const activeSlide = this.slides[this.activeIndex];
+                                const activeVideo = activeSlide.querySelector('video');
+                                if (activeVideo) {
+                                    activeVideo.play();
+                                }
+                            },
+                            init: function() {
+                                // 첫 번째 슬라이드 비디오 재생
+                                const activeSlide = this.slides[this.activeIndex];
+                                const activeVideo = activeSlide.querySelector('video');
+                                if (activeVideo) {
+                                    activeVideo.play();
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
+        </section>
+
+        <!-- Start Our Latest Project -->
+        <section class="cs_pt_130 cs_pt_lg_75 cs_pb_140 cs_pb_lg_80">
+            <div class="container">
+                <ul class="cs_isotop_filter cs_style_1 d-flex justify-content-center flex-wrap m-0 cs_pl_0 cs_pb_30">
+                    <li class="active"><a href="#" data-filter="*">All</a></li>
+                    <li><a href="#" data-filter=".marketing">Marketing</a></li>
+                    <li><a href="#" data-filter=".youtube">Youtube</a></li>
+                    <li><a href="#" data-filter=".development">Development</a></li>
+                </ul>
+                <div class="cs_isotop cs_style_1 cs_isotop_col_4 cs_has_gutter_24">
+                    <div class="cs_grid_sizer"></div>
+
+                    <!-- Marketing Projects -->
+                    <div class="cs_isotop_item marketing">
+                        <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_ma01.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">프랜차이즈 상백카츠</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item marketing">
+                        <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_ma02.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">냠냠 피자</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item marketing">
+                        <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_ma03.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">프랜차이즈 올레치킨</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item marketing">
+                        <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_ma04.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">프랜차이지 나멘</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item marketing">
+                        <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_ma05.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">우리동네 PC방</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item marketing">
+                        <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_ma06.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">ACE캡스</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+
+                    <!-- Youtube Projects -->
+                    <div class="cs_isotop_item youtube">
+                        <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_you01.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">프랜차이즈 스타즈</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item youtube">
+                        <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_you02.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">프랜차이즈 비너스카페</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item youtube">
+                        <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_you03.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">알로하 마트</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item youtube">
+                        <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_you04.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">존잼 만화</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item youtube">
+                        <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_you05.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">베스트라긴즈60</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item youtube">
+                        <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_you06.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">망우동 한우마을</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+
+                    <!-- Development Projects -->
+                    <div class="cs_isotop_item development">
+                        <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_dev01.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">아케이 가구</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item development">
+                        <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_dev02.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">날샌 쇼핑몰</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item development">
+                        <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_dev03.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">베스트 모바일</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item development">
+                        <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_dev04.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">코인 비트</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item development">
+                        <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_dev05.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">오늘의 식탁</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                    <div class="cs_isotop_item development">
+                        <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+                            <a href="project-details.html" class="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"></a>
+                            <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/pofol_dev06.jpg'); background-size: cover; background-position: center;"></div>
+                            <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4"><a href="project-details.html">날쌘 자동화</a></h3>
+                        </div>
+                    </div><!-- .cs_isotop_item -->
+                </div>
+            </div>
+        </section>
+        <!-- End Our Latest Project -->
+
+        <!-- Isotope 초기화 스크립트 -->
+        <script>
+            $(document).ready(function() {
+                // Isotope 그리드 초기화
+                var $grid = $('.cs_isotop').isotope({
+                    itemSelector: '.cs_isotop_item',
+                    layoutMode: 'fitRows',
+                    percentPosition: true,
+                    masonry: {
+                        columnWidth: '.cs_grid_sizer'
+                    }
+                });
+
+                // 필터 버튼 클릭 이벤트
+                $('.cs_isotop_filter a').on('click', function(e) {
+                    e.preventDefault();
+                    var filterValue = $(this).attr('data-filter');
+
+                    // 활성 클래스 변경
+                    $('.cs_isotop_filter li').removeClass('active');
+                    $(this).parent().addClass('active');
+
+                    // Isotope 필터링
+                    $grid.isotope({ filter: filterValue });
+                });
+
+                // 이미지 로드 후 레이아웃 재정렬
+                $grid.imagesLoaded().progress(function() {
+                    $grid.isotope('layout');
+                });
+            });
+        </script>
+
+        <!-- 삭제된 섹션 관련 스타일 - 주석처리
+        <style>
+            .service-content-section {
+                padding: 100px 0;
+                background: #fff;
+            }
+
+            .service-content-section .inner {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .section-title {
+                font-size: 48px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 30px;
+                color: #1a1a1a;
+            }
+
+            .section-description {
+                font-size: 18px;
+                line-height: 1.8;
+                text-align: center;
+                color: #666;
+            }
+
+            @media (max-width: 768px) {
+                .section-title {
+                    font-size: 32px;
+                    margin-bottom: 20px;
+                }
+
+                .section-description {
+                    font-size: 16px;
+                }
+            }
+        </style>
+        -->
+
+    </div>
+</body>
+</html>

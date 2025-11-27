@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{UI/layouts/user/main_layout}"
+      >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엔탑포지션</title>
+</head>
+<body layout:fragment="content">
+    <div class="content-wrap" id="print_area">
+        <!-- Video Background Section -->
+        <section id="video-background-section">
+            <div class="video-slider-container">
+                <div class="swiper videoSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/contact_video1.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <p class="slide-description animate-fade-up">일상의 답을 찾는</p>
+                                        <p class="slide-description animate-fade-up delay-1">'엔탑포지션'입니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/online_marketing1.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">엔탑포지션의 철학</h2>
+                                        <p class="slide-description animate-fade-up delay-1">고객과의 소통 없이는, 어떤 노력도 의미 없습니다.</p>
+                                        <p class="slide-description animate-fade-up delay-2">브랜드 스토리는 매출보다 먼저 고객 마음에 남아야 합니다.</p>
+                                        <p class="slide-description animate-fade-up delay-3">창의적 접근과 체계적 전략이 없다면 일시적 인기는 브랜드 가치가 아닙니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/portfolio_video1.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">일상을 변화시키는 브랜드 성장 파트너</h2>
+                                        <p class="slide-description animate-fade-up delay-2">광고 효율 · 매출 상승 · 종합 마케팅 컨설팅 등을 통해</p>
+                                        <p class="slide-description animate-fade-up delay-3">고객의 성공을 위한 다양한 비즈니스를 수행하고 있습니다.</p>
+                                        <p class="slide-description animate-fade-up delay-4">특히, 디지털 환경 속 급변하는 시장에서</p>
+                                        <p class="slide-description animate-fade-up delay-5">정확한 전략과 빠른 실행력을 기반으로</p>
+                                        <p class="slide-description animate-fade-up delay-6">브랜딩·광고·마케팅·운영 전반을 총괄하는</p>
+                                        <p class="slide-description animate-fade-up delay-7">종합 비즈니스 파트너를 지향합니다.</p>
+                                        <p class="slide-description animate-fade-up delay-8">디지털 광고가 당장의 매출만 목표로 하는 "소모성 광고"가 되지 않도록</p>
+                                        <p class="slide-description animate-fade-up delay-9">브랜드 효과와 지속적인 고객 유입 구조를 만들어내며,</p>
+                                        <p class="slide-description animate-fade-up delay-10">변화하는 시장 속에서도 꾸준히 성장할 수 있는 기반을 마련합니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/portfolio_video2.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">엔탑포지션의 핵심 서비스</h2>
+                                        <p class="slide-description animate-fade-up delay-1">전략 광고 제작 (TV·온라인·오프라인 통합 광고 기획부터 제작·송출·분석까지)</p>
+                                        <p class="slide-description animate-fade-up delay-2">브랜딩 & 디자인 (CI·BI / 패키지·웹·인쇄물·영상 디자인)</p>
+                                        <p class="slide-description animate-fade-up delay-3">디지털 마케팅 운영 (검색광고, SNS 마케팅, 바이럴, SEO, 콘텐츠 기획)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/service_academy_video1.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">엔탑포지션의 강점</h2>
+                                        <p class="slide-description animate-fade-up delay-1">통합 서비스! 단순 광고 집행이 아닌 브랜드 스토리 구축 → 디자인 → 광고 집행 → 운영까지 전 과정 책임</p>
+                                        <p class="slide-description animate-fade-up delay-2">실전 중심의 기획력! 비현실적인 이상론이 아닌, 고객 현장 밀착형 컨설팅</p>
+                                        <p class="slide-description animate-fade-up delay-3">경험 기반 플레이북! 1,000건 이상의 광고 프로젝트 수행 경험 보유</p>
+                                        <p class="slide-description animate-fade-up delay-4">빠른 실행력! 클라이언트 일정에 맞춘 최적의 타이밍에 빠르게 대응</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/service_ppl_video1.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">엔탑포지션의 서비스 분야</h2>
+                                        <p class="slide-description animate-fade-up delay-1">프랜차이즈 본사 브랜딩, 온·오프라인 통합 마케팅, TV 광고 제작, 가맹점 개발 지원</p>
+                                        <p class="slide-description animate-fade-up delay-2">병원 마케팅 (의원/치과/한의원 등), 학원 마케팅 (보습·입시·외국어 등), 뷰티·건강식품·화장품, 제조·유통, IT·교육·문화 콘텐츠 등</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 7 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/service_automation_video1.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">엔탑포지션의 업무방식</h2>
+                                        <p class="slide-description animate-fade-up delay-1">철저한 사전 조사 및 타깃 분석 (고객 니즈 우선 / 브랜드 현재 위치 파악)</p>
+                                        <p class="slide-description animate-fade-up delay-2">명확한 컨셉 수립 (컨셉 제안서 → 피드백 → 확정 → 제작)</p>
+                                        <p class="slide-description animate-fade-up delay-3">실행 후 성과 측정 (월별 광고 효율 리포트 제공 / 데이터 기반 피드백 진행)</p>
+                                        <p class="slide-description animate-fade-up delay-4">지속적 전략 보완 및 고도화 (일회성 캠페인이 아닌, 지속적인 파트너십 유지)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 8 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../../video/contact_video3.mp4" type="video/mp4">
+                                </video>
+                                <div class="slide-overlay">
+                                    <div class="slide-content">
+                                        <h2 class="slide-title animate-fade-up">"진짜 브랜드는 소비자 마음속에 남아 있어야 합니다"</h2>
+                                        <p class="slide-description animate-fade-up delay-2">단순한 광고 집행이 아니라,</p>
+                                        <p class="slide-description animate-fade-up delay-3">고객의 사업 철학을 담은 메시지를 정확하게 전달하는 일.</p>
+                                        <p class="slide-description animate-fade-up delay-4">그것이 엔탑포지션이 생각하는 마케팅입니다.</p>
+                                        <p class="slide-description animate-fade-up delay-5">- 대표 이OO -</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const videoSwiper = new Swiper('.videoSwiper', {
+                        loop: true,
+                        speed: 1000,
+                        autoplay: {
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        },
+                        effect: 'fade',
+                        fadeEffect: {
+                            crossFade: true
+                        },
+                        grabCursor: true,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        on: {
+                            slideChange: function() {
+                                // 모든 비디오 일시정지
+                                document.querySelectorAll('.videoSwiper video').forEach(video => {
+                                    video.pause();
+                                });
+
+                                // 현재 슬라이드의 비디오 재생
+                                const activeSlide = this.slides[this.activeIndex];
+                                const activeVideo = activeSlide.querySelector('video');
+                                if (activeVideo) {
+                                    activeVideo.play();
+                                }
+                            },
+                            init: function() {
+                                // 첫 번째 슬라이드 비디오 재생
+                                const activeSlide = this.slides[this.activeIndex];
+                                const activeVideo = activeSlide.querySelector('video');
+                                if (activeVideo) {
+                                    activeVideo.play();
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
+        </section>
+
+        <!-- History Section -->
+        <section class="history-section" id="company-history">
+            <div class="inner">
+                <h2 class="history-title" data-aos="fade-up">연혁 (HISTORY)</h2>
+                <div class="history-timeline">
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="history-year">2006</div>
+                        <div class="history-content">금융보험권 상담센터 운영 '지점장 교육 프로그램' 기획</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="150">
+                        <div class="history-year">2007</div>
+                        <div class="history-content">'브랜드유' 설립 (브랜딩 · 광고 · 마케팅 사업 시작)</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="history-year">2010</div>
+                        <div class="history-content">광고 운영 기업과 제휴하여 대형 프로젝트 진행</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="250">
+                        <div class="history-year">2011</div>
+                        <div class="history-content">LG전자 광고 캠페인 참여</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="history-year">2012</div>
+                        <div class="history-content">소상공인 · 스타트업 브랜딩 전문 기업으로 확장</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="350">
+                        <div class="history-year">2015</div>
+                        <div class="history-content">'브랜드유'을 '엔탑포지션'으로 리브랜딩</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="history-year">2016</div>
+                        <div class="history-content">PRODUCE 101 '국민 프로듀서' 브랜딩 협업</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="450">
+                        <div class="history-year">2022</div>
+                        <div class="history-content">CF 광고 제작 및 TV 광고 송출</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="history-year">2023</div>
+                        <div class="history-content">네이버 PPL 광고 집행</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="550">
+                        <div class="history-year">2024</div>
+                        <div class="history-content">엔탑포지션 론칭</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="600">
+                        <div class="history-year">2025</div>
+                        <div class="history-content">글로벌 홍보 영상 제작 및 문자 캠페인 확대</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="650">
+                        <div class="history-year">2025</div>
+                        <div class="history-content">비영리 브랜드 및 ESG 캠페인 참여</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="700">
+                        <div class="history-year">2025</div>
+                        <div class="history-content">AI 기반 광고 솔루션 개발</div>
+                    </div>
+                    <div class="history-item" data-aos="fade-up" data-aos-delay="750">
+                        <div class="history-year">2025</div>
+                        <div class="history-content">네이버24 프로젝트 광고 집행</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .history-section {
+                padding: 100px 0;
+                background: #f8f9fa;
+            }
+
+            .history-section .inner {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .history-title {
+                font-size: 48px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 80px;
+                color: #1a1a1a;
+            }
+
+            .history-timeline {
+                position: relative;
+                padding-left: 50px;
+            }
+
+            .history-timeline::before {
+                content: '';
+                position: absolute;
+                left: 20px;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: linear-gradient(180deg, #0066ff 0%, #00ccff 100%);
+            }
+
+            .history-item {
+                position: relative;
+                margin-bottom: 40px;
+                padding-left: 60px;
+                opacity: 0;
+            }
+
+            .history-item[data-aos].aos-animate {
+                opacity: 1;
+            }
+
+            .history-item::before {
+                content: '';
+                position: absolute;
+                left: 12px;
+                top: 8px;
+                width: 16px;
+                height: 16px;
+                background: #0066ff;
+                border-radius: 50%;
+                border: 3px solid #fff;
+                box-shadow: 0 0 0 2px #0066ff;
+            }
+
+            .history-year {
+                font-size: 28px;
+                font-weight: 700;
+                color: #0066ff;
+                margin-bottom: 10px;
+            }
+
+            .history-content {
+                font-size: 18px;
+                line-height: 1.6;
+                color: #333;
+            }
+
+            @media (max-width: 768px) {
+                .history-title {
+                    font-size: 32px;
+                    margin-bottom: 50px;
+                }
+
+                .history-timeline {
+                    padding-left: 30px;
+                }
+
+                .history-item {
+                    padding-left: 40px;
+                }
+
+                .history-year {
+                    font-size: 22px;
+                }
+
+                .history-content {
+                    font-size: 16px;
+                }
+            }
+        </style>
+
+        <!-- Start Organization Chart -->
+    <section class="background-top-filled cs_pt_133 cs_pt_lg_75 cs_pb_140 cs_pb_lg_80" id="company-organization" data-src="../assets/img/gallery_bg.jpeg">
+      <div class="container">
+        <div class="cs_section_heading cs_style_1 text-center cs_mb_60 cs_mb_lg_40">
+          <div class="cs_section_heading_in">
+            <h3 class="cs_fs_20 text-accent fw-normal cs_lh_base wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Organization</h3>
+            <h2 class="cs_fs_48 cs_fs_lg_36 m-0">조직도 <br>Our Team Structure</h2>
+          </div>
+        </div>
+        <ul class="cs_isotop_filter cs_style_1 d-flex justify-content-center flex-wrap m-0 cs_pl_0 cs_pb_30">
+          <li class="active"><a href="javascript:void(0);" data-filter="*">전체조직</a></li>
+          <li><a href="javascript:void(0);" data-filter=".ceo">대표</a></li>
+          <li><a href="javascript:void(0);" data-filter=".planning">기획</a></li>
+          <li><a href="javascript:void(0);" data-filter=".branding">브랜딩</a></li>
+        </ul>
+        <div class="cs_isotop cs_style_1 cs_isotop_col_3 cs_has_gutter_24">
+          <div class="cs_grid_sizer"></div>
+
+          <!-- 대표 -->
+          <div class="cs_isotop_item ceo">
+            <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+              <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/org/ceo.jpeg'); background-size: cover; background-position: center;"></div>
+              <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">대표</h3>
+            </div>
+          </div><!-- .cs_isotop_item -->
+
+          <!-- 기획 -->
+          <div class="cs_isotop_item planning">
+            <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+              <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/org/planning.jpeg'); background-size: cover; background-position: center;"></div>
+              <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">기획</h3>
+            </div>
+          </div><!-- .cs_isotop_item -->
+
+          <!-- 브랜딩 - 광고운영 -->
+          <div class="cs_isotop_item branding">
+            <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+              <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/org/ad_operation.jpeg'); background-size: cover; background-position: center;"></div>
+              <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">광고운영</h3>
+            </div>
+          </div><!-- .cs_isotop_item -->
+
+          <!-- 브랜딩 - 콘텐츠 -->
+          <div class="cs_isotop_item branding">
+            <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+              <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/org/content.jpeg'); background-size: cover; background-position: center;"></div>
+              <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">콘텐츠</h3>
+            </div>
+          </div><!-- .cs_isotop_item -->
+
+          <!-- 브랜딩 - 디자인 -->
+          <div class="cs_isotop_item branding">
+            <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+              <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/org/design.jpeg'); background-size: cover; background-position: center;"></div>
+              <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">디자인</h3>
+            </div>
+          </div><!-- .cs_isotop_item -->
+
+          <!-- 브랜딩 - 영상 -->
+          <div class="cs_isotop_item branding">
+            <div class="cs_portfolio cs_style_1 cs_size_2 position-relative overflow-hidden">
+              <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/org/video.jpeg'); background-size: cover; background-position: center;"></div>
+              <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">영상</h3>
+            </div>
+          </div><!-- .cs_isotop_item -->
+
+          <!-- 브랜딩 - 촬영 -->
+          <div class="cs_isotop_item branding">
+            <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+              <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/org/photo.jpeg'); background-size: cover; background-position: center;"></div>
+              <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">촬영</h3>
+            </div>
+          </div><!-- .cs_isotop_item -->
+
+          <!-- 브랜딩 - TM/영업 -->
+          <div class="cs_isotop_item branding">
+            <div class="cs_portfolio cs_style_1 cs_size_1 position-relative overflow-hidden">
+              <div class="cs_portfolio_thumb d-block h-100 w-100 cs_transition_6" style="background-image: url('../assets/img/org/tm_sales.jpeg'); background-size: cover; background-position: center;"></div>
+              <h3 class="cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">TM/영업</h3>
+            </div>
+          </div><!-- .cs_isotop_item -->
+        </div>
+      </div>
+    </section>
+    <!-- End Organization Chart -->
+     
+    </div>
+
+
+    <script>
+        // Isotope 초기화 (조직도 필터링)
+        var iso = new Isotope('.cs_isotop', {
+            itemSelector: '.cs_isotop_item',
+            percentPosition: true,
+            masonry: {
+            columnWidth: '.cs_grid_sizer'
+            },
+            transitionDuration: '0.6s'
+        });
+
+        // 필터 버튼 클릭 이벤트
+        var filterButtons = document.querySelectorAll('.cs_isotop_filter a');
+        filterButtons.forEach(function(button) {
+            button.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // active 클래스 제거 및 추가
+            document.querySelector('.cs_isotop_filter li.active').classList.remove('active');
+            this.parentElement.classList.add('active');
+
+            // 필터 적용
+            var filterValue = this.getAttribute('data-filter');
+            iso.arrange({ filter: filterValue });
+            });
+        });
+    </script>
+</body>
+</html>
